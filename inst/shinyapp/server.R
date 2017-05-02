@@ -6,6 +6,7 @@ d=d[-which(d=='mtcars')]
 d=c('mtcars',d)
 
 server <- shinyServer(function(input, output,session) {
+  options(shiny.maxRequestSize=255*1024^2)
   TEMPLIST<-new.env()
   TEMPLIST$d<-d
 #Annotation Variable UI ----
